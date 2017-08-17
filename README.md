@@ -2,7 +2,7 @@
 
 ## 1. Introdução
 
-Após ter criado o mesmo framework, originalmente em [PHP](https://github.com/aleDsz/rarframework), percebi que eu teria a mesma necessidade de um ORM em outras linguagens. Assim como eu precisei quando comecei a utilizar o C# em ambiente profissional e, com a praticidade que eu tinha em PHP, resolvi adaptar para C#.
+Após ter criado o mesmo framework, originalmente em [PHP](https://github.com/aleDsz/rarframework), percebi que eu teria a mesma necessidade de um ORM em outras linguagens. Assim como eu precisei quando comecei a utilizar o VB6 em ambiente profissional e, com a praticidade que eu tinha em PHP, resolvi adaptar para VB6.
 
 ## 2. Como Funciona
 
