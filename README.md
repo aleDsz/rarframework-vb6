@@ -32,7 +32,7 @@ Option Explicit
 Private pCampo   As String
 
 Public Property Get Campo() As Variant
-Attribute Campo.VB_Description = "nome_do_campo, [True/False]" 'True quando for uma Primary Key, False quando não for
+Attribute Campo.VB_Description = "nome_do_campo, False" 'True quando for uma Primary Key
     Let Campo = pCampo
 End Property
 
