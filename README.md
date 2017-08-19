@@ -10,99 +10,43 @@ Através do pacote DBI, é possível realizar uma conexão com vários tipos de 
 
 Neste caso, uma classe deve seguir o seguinte modelo:
 
-```csharp
-ClasseTeste <- methods::setRefClass(
-    
-    # Nome da Tabela
-    "nome_do_campo",
-    
-    # Campos da Tabela
-    fields = list(
-        # Aqui você precisa informar o tipo do
-        # campo no banco de dados, seguindo os tipos de dados do R
-        nome_do_campo = "character"
-    ) 
-)
+```vb6
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "Usuario"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Attribute VB_Description = "nome_da_tabela" ' Nome da tabela
+Attribute VB_Ext_KEY = "SavedWithClassBuilder6" ,"Yes"
+Attribute VB_Ext_KEY = "Top_Level" ,"Yes"
+Option Explicit
+
+Private pCampo   As String
+
+Public Property Get Campo() As Variant
+Attribute Campo.VB_Description = "nome_do_campo, [True/False]" 'True quando for uma Primary Key, False quando não for
+    Let Campo = pCampo
+End Property
+
+Public Property Let Campo(sCampo As String)
+    Let pCampo = sCampo
+End Property
 ```
 
 ## 3. Como Utilizar
 
 Para que você possa utilizar todos as funcionalidades do framework no seu ambiente, você pode criar 1 (ou mais, dependendo da sua forma de trabalho) classe para acessar ao banco de dados de forma genérica.
 
-```csharp
-ModelDataAccess <- methods::setRefClass(
-    "ModelDataAccess",
-
-    methods = list(
-
-        initialize = function() {
-            tryCatch({
-                databaseFactory <- rarframeworkR:::DatabaseFactory$new()
-                databaseFactory$getDataContextInstance()
-            }, error = function (ex) {
-                stop (ex$message)
-            })
-        },
-
-        create = function(obj) {
-            tryCatch({
-                sqlStatement   <- rarframeworkR:::SqlStatementInsert$new(obj);
-                commandContext <- rarframeworkR:::CommandContext$new(sqlStatement$getSql());
-                
-                commandContext$executeQuery()
-            }, error = function (ex) {
-                stop (ex$message)
-            })
-        },
-        
-        save = function(obj) {
-            tryCatch({
-                sqlStatement   <- rarframeworkR:::SqlStatementUpdate$new(obj);
-                commandContext <- CrarframeworkR:::ommandContext$new(sqlStatement$getSql());
-                
-                commandContext$executeQuery()
-            }, error = function (ex) {
-                stop (ex$message)
-            })
-        },
-        
-        find = function(obj) {
-            tryCatch({
-                sqlStatement   <- rarframeworkR:::SqlStatementSelect$new(obj);
-                objContext     <- rarframeworkR:::ObjectContext$new(obj);
-                commandContext <- rarframeworkR:::CommandContext$new(sqlStatement$getSql(FALSE));
-                
-                return (objContext$getObject(commandContext$executeReader()))
-            }, error = function (ex) {
-                stop (ex$message)
-            })
-        },
-
-        findAll = function(obj) {
-            tryCatch({
-                sqlStatement   <- rarframeworkR:::SqlStatementSelect$new(obj);
-                objContext     <- rarframeworkR:::ObjectContext$new(obj);
-                commandContext <- rarframeworkR:::CommandContext$new(sqlStatement$getSql(TRUE));
-                
-                return (objContext$getObjects(commandContext$executeReader()))
-            }, error = function (ex) {
-                stop (ex$message)
-            })
-        },
-        
-        remove = function(obj) {
-            tryCatch({
-                sqlStatement   <- rarframeworkR:::SqlStatementDelete$new(obj);
-                commandContext <- rarframeworkR:::CommandContext$new(sqlStatement$getSql());
-                
-                commandContext$executeQuery()
-            }, error = function (ex) {
-                stop (ex$message)
-            })
-        }
-
-    )
-)
+```vb6
+' Estou sem o código ainda
 ```
 
 **OBS.:** Você não precisa criar a classe de forma genérica, você pode criar uma classe de acesso a dados para cada entidade que você criar no modelo citado acima.
