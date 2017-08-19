@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<configuration>
+	<connectionString>Dsn=maria_prd;</connectionString>
+	<timeout>5000</timeout>
+</configuration>
