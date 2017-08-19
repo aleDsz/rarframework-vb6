@@ -10,7 +10,7 @@ Através do pacote DBI, é possível realizar uma conexão com vários tipos de 
 
 Neste caso, uma classe deve seguir o seguinte modelo:
 
-```vb6
+```vb
 VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
@@ -45,7 +45,7 @@ End Property
 
 Para que você possa utilizar todos as funcionalidades do framework no seu ambiente, você pode criar 1 (ou mais, dependendo da sua forma de trabalho) classe para acessar ao banco de dados de forma genérica.
 
-```vb6
+```vb
 ' Estou sem o código ainda
 ```
 
