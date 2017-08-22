@@ -6,7 +6,7 @@ Após ter criado o mesmo framework, originalmente em [PHP](https://github.com/al
 
 ## 2. Como Funciona
 
-Através do pacote DBI, é possível realizar uma conexão com vários tipos de banco de dados. Além disso, por meio do `Generics`, é possível acessar o conteúdo de um objeto e obter todas as informações necessárias para criar uma instrução SQL.
+Através do ADODB, é possível realizar uma conexão com vários tipos de banco de dados. Além disso, por meio do `Generics`, é possível acessar o conteúdo de um objeto e obter todas as informações necessárias para criar uma instrução SQL.
 
 Neste caso, uma classe deve seguir o seguinte modelo:
 
